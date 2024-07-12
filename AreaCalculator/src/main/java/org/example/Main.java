@@ -6,12 +6,18 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        String figure;
         System.out.print("Привет! Я могу посчитать площадь прямоугольника.\nВведите длину первой стороны(в см):");
         int lenght = inputValue();
         System.out.print("Введите длину второй стороны(в см):");
         int width = inputValue();
         int area = lenght * width;
-        System.out.printf("Площадь прямоугольника со сторонами %s и %s равна %s см^2%n", lenght, width, area);
+        if (lenght == width) {
+            figure = "квадрата";
+        }else {
+            figure = "прямоугольника";
+        }
+        System.out.printf("Площадь %s со сторонами %s и %s равна %s см^2%n",figure, lenght, width, area);
     }
 
     public static int inputValue() {
